@@ -3,262 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kolusu Lokesh — Java Full Stack Developer portfolio. Java, Spring Boot, Hibernate, JPA, SQL, MySQL, HTML, CSS and JavaScript.">
-    <meta name="theme-color" content="#071018">
+    <meta name="description" content="Kolusu Lokesh — Java Full Stack Developer portfolio.">
+    <meta name="theme-color" content="#080808">
     <title>Kolusu Lokesh | Java Full Stack Developer</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="page-glow page-glow-one"></div>
-    <div class="page-glow page-glow-two"></div>
+    <header id="home">
+        <div class="container">
+            <nav>
+                <a class="logo" href="#home" aria-label="Lokesh home">
+                    <span>LK</span>
+                </a>
 
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo" aria-label="Kolusu Lokesh home">
-                <span class="logo-mark">LK</span>
-                <span class="logo-text">Kolusu<span>_Lokesh</span></span>
-            </a>
+                <ul id="sidemenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Skills</a></li>
+                    <li><a href="#portfolio">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <button class="close-menu" type="button" aria-label="Close menu">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </ul>
 
-            <button class="hamburger" type="button" aria-label="Open navigation" aria-expanded="false">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+                <button class="open-menu" type="button" aria-label="Open menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </nav>
 
-            <ul class="nav-links">
-                <li><a href="#about">about</a></li>
-                <li><a href="#skills">skills</a></li>
-                <li><a href="#experience">experience</a></li>
-                <li><a href="#projects">projects</a></li>
-                <li><a href="#education">education</a></li>
-                <li><a href="#contact">contact</a></li>
-            </ul>
+            <div class="header-text reveal">
+                <p class="accent-line">JAVA FULL STACK DEVELOPER</p>
+                <h1>Hi, I’m <span>Lokesh</span><br>from Vijayawada, Andhra Pradesh.</h1>
+                <p class="header-description">
+                    Recent B.Tech graduate focused on Java, Spring Boot, Hibernate, JPA, SQL and MySQL,
+                    building practical database-driven applications.
+                </p>
+
+                <div class="header-actions">
+                    <a class="btn btn-primary" href="assets/software_developer_fresher_lokesh.pdf" download="Kolusu_Lokesh_Resume.pdf">
+                        <i class="fa-solid fa-download"></i> Download Resume
+                    </a>
+                    <a class="btn btn-outline" href="#contact">Contact Me</a>
+                </div>
+
+                <div class="quick-links">
+                    <a href="https://github.com/lokesh-142" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com/in/kolusulokesh" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="mailto:kolusulokesh934@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
         </div>
-    </nav>
+    </header>
 
     <main>
-        <section id="home" class="hero section">
-            <div class="container hero-grid">
-                <div class="hero-content hidden">
-                    <div class="status-pill">
-                        <span class="status-dot"></span>
-                        Java Full Stack Developer
-                    </div>
-
-                    <p class="eyebrow">HELLO, I’M</p>
-                    <h1>Kolusu <span>Lokesh</span></h1>
-                    <h2>I build reliable, database-driven applications.</h2>
-                    <p class="hero-copy">
-                        Recent B.Tech graduate in Information Technology with hands-on experience in
-                        Java, Spring Boot, Hibernate, JPA, MySQL and modern frontend fundamentals.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a href="assets/software_developer_fresher_lokesh.pdf" download="Kolusu_Lokesh_Resume.pdf" class="btn primary-btn">
-                            <i class="fa-solid fa-file-arrow-down"></i>
-                            Download Resume
-                        </a>
-                        <a href="#projects" class="btn secondary-btn">
-                            Explore Projects
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-
-                    <div class="hero-links">
-                        <a href="https://github.com/lokesh-142" target="_blank" rel="noopener" aria-label="GitHub">
-                            <i class="fa-brands fa-github"></i> GitHub
-                        </a>
-                        <a href="https://linkedin.com/in/kolusulokesh" target="_blank" rel="noopener" aria-label="LinkedIn">
-                            <i class="fa-brands fa-linkedin"></i> LinkedIn
-                        </a>
-                        <a href="mailto:kolusulokesh934@gmail.com">
-                            <i class="fa-solid fa-envelope"></i> Email
-                        </a>
-                    </div>
-                </div>
-
-                <div class="hero-visual hidden delay-one" aria-label="Developer profile terminal">
-                    <div class="terminal-window">
-                        <div class="terminal-bar">
-                            <div class="terminal-dots"><span></span><span></span><span></span></div>
-                            <span class="terminal-title">lokesh.java</span>
-                            <span class="terminal-menu">•••</span>
-                        </div>
-                        <div class="terminal-body">
-                            <div><span class="line-no">01</span><span class="code-key">public class</span> <span class="code-name">Lokesh</span> {</div>
-                            <div><span class="line-no">02</span>&nbsp;&nbsp;<span class="code-key">String</span> role = <span class="code-string">"Java Full Stack Developer"</span>;</div>
-                            <div><span class="line-no">03</span>&nbsp;&nbsp;<span class="code-key">String[]</span> backend = {</div>
-                            <div><span class="line-no">04</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">"Java"</span>, <span class="code-string">"Spring Boot"</span>,</div>
-                            <div><span class="line-no">05</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">"Hibernate"</span>, <span class="code-string">"JPA"</span></div>
-                            <div><span class="line-no">06</span>&nbsp;&nbsp;};</div>
-                            <div><span class="line-no">07</span>&nbsp;&nbsp;<span class="code-key">String[]</span> database = {</div>
-                            <div><span class="line-no">08</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-string">"MySQL"</span>, <span class="code-string">"SQL"</span>, <span class="code-string">"DBMS"</span></div>
-                            <div><span class="line-no">09</span>&nbsp;&nbsp;};</div>
-                            <div><span class="line-no">10</span>&nbsp;&nbsp;<span class="code-method">build</span>(<span class="code-string">"clean"</span>, <span class="code-string">"maintainable"</span>);</div>
-                            <div><span class="line-no">11</span>}</div>
-                            <div class="terminal-cursor"><span></span></div>
+        <section id="about">
+            <div class="container">
+                <div class="row about-row reveal">
+                    <div class="about-col-1">
+                        <div class="profile-card">
+                            <div class="profile-grid"></div>
+                            <div class="profile-initials">LK</div>
+                            <div class="profile-caption">Java · Spring Boot · MySQL</div>
                         </div>
                     </div>
 
-                    <div class="floating-card stack-card">
-                        <span class="floating-label">CORE STACK</span>
-                        <div class="mini-tags">
-                            <span>Java</span><span>Spring Boot</span><span>JPA</span><span>MySQL</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="hero-bottom container">
-                <div class="contact-strip">
-                    <span><i class="fa-solid fa-location-dot"></i> Vijayawada, Andhra Pradesh</span>
-                    <span><i class="fa-solid fa-phone"></i> +91 8919232414</span>
-                    <span><i class="fa-solid fa-envelope"></i> kolusulokesh934@gmail.com</span>
-                </div>
-                <a href="#about" class="scroll-cue">
-                    Scroll to explore <i class="fa-solid fa-arrow-down"></i>
-                </a>
-            </div>
-        </section>
-
-        <section id="about" class="section">
-            <div class="container hidden">
-                <div class="section-heading">
-                    <span class="section-number">01</span>
-                    <div>
-                        <p class="section-kicker">PROFILE</p>
-                        <h2>Professional Summary</h2>
-                    </div>
-                </div>
-
-                <div class="about-grid">
-                    <article class="card summary-card">
-                        <div class="card-icon"><i class="fa-solid fa-user-tie"></i></div>
-                        <p>
+                    <div class="about-col-2">
+                        <p class="section-kicker">ABOUT ME</p>
+                        <h2 class="sub-title">A developer who enjoys turning requirements into working software.</h2>
+                        <p class="about-text">
                             Recent B.Tech graduate in Information Technology with strong knowledge of Core Java,
                             Advanced Java, OOP, SQL, DBMS, Spring Boot, Hibernate and JPA. Hands-on experience
                             building database-driven applications using Java, MySQL, JDBC, HTML, CSS and JavaScript.
                         </p>
-                        <p>
-                            Familiar with CRUD operations, layered application development, database integration,
-                            exception handling, debugging and SDLC practices, with a strong focus on problem-solving
-                            and maintainable application design.
+                        <p class="about-text">
+                            I’m comfortable with CRUD operations, layered application development, database integration,
+                            exception handling, debugging and SDLC practices, with a practical focus on maintainable code.
                         </p>
-                    </article>
 
-                    <div class="focus-grid">
-                        <div class="card focus-card">
-                            <span class="focus-number">01</span>
-                            <h3>Backend Development</h3>
-                            <p>Java, Spring Boot, Hibernate, JPA and layered application design.</p>
+                        <div class="tab-titles">
+                            <button class="tab-links active-link" data-tab="skills-tab" type="button">Skills</button>
+                            <button class="tab-links" data-tab="experience-tab" type="button">Experience</button>
+                            <button class="tab-links" data-tab="education-tab" type="button">Education</button>
                         </div>
-                        <div class="card focus-card">
-                            <span class="focus-number">02</span>
-                            <h3>Database Engineering</h3>
-                            <p>MySQL, SQL, relational modeling, joins, constraints and normalization.</p>
+
+                        <div class="tab-contents active-tab" id="skills-tab">
+                            <ul>
+                                <li><span>Java</span><br>Core Java, OOP, Collections, Multithreading, JDBC</li>
+                                <li><span>Backend</span><br>Spring Boot, Spring Framework, Hibernate, JPA</li>
+                                <li><span>Database</span><br>MySQL, SQL, Joins, Subqueries, Views, Stored Procedures</li>
+                            </ul>
                         </div>
-                        <div class="card focus-card">
-                            <span class="focus-number">03</span>
-                            <h3>Application Quality</h3>
-                            <p>Exception handling, validation, debugging, SDLC and maintainable code.</p>
+
+                        <div class="tab-contents" id="experience-tab">
+                            <ul>
+                                <li><span>Jul 2022 – Jan 2023</span><br>Industrial Intern · Microlink Information Technologies</li>
+                                <li><span>Focus</span><br>Testing, debugging, system integration and troubleshooting</li>
+                            </ul>
                         </div>
-                        <div class="card focus-card">
-                            <span class="focus-number">04</span>
-                            <h3>Web Fundamentals</h3>
-                            <p>HTML5, CSS3 and JavaScript for practical frontend interfaces.</p>
+
+                        <div class="tab-contents" id="education-tab">
+                            <ul>
+                                <li><span>2023 – 2026</span><br>B.Tech – Information Technology · R.V.R. &amp; J.C. College of Engineering · CGPA 7.5</li>
+                                <li><span>2020 – 2023</span><br>Diploma – Computer Engineering · A.A.N.M &amp; V.V.R.S.R Polytechnic · 87%</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="section section-alt">
-            <div class="container hidden">
-                <div class="section-heading">
-                    <span class="section-number">02</span>
-                    <div>
-                        <p class="section-kicker">TOOLBOX</p>
-                        <h2>Technical Skills</h2>
-                    </div>
-                </div>
+        <section id="services">
+            <div class="container reveal">
+                <p class="section-kicker">WHAT I WORK WITH</p>
+                <h2 class="sub-title">Technical Skills</h2>
 
-                <div class="skills-grid">
-                    <article class="card skill-card">
-                        <div class="skill-icon"><i class="fa-brands fa-java"></i></div>
-                        <div>
-                            <h3>Java</h3>
-                            <p>Core Java · OOP · Collections · Exception Handling · Multithreading · Java I/O · JDBC</p>
-                        </div>
+                <div class="services-list">
+                    <article>
+                        <i class="fa-brands fa-java"></i>
+                        <h3>Java Development</h3>
+                        <p>Core Java, OOP, Collections, Exception Handling, Multithreading, Java I/O and JDBC.</p>
+                        <a href="#contact">Discuss a role <i class="fa-solid fa-arrow-right"></i></a>
                     </article>
 
-                    <article class="card skill-card">
-                        <div class="skill-icon"><i class="fa-solid fa-layer-group"></i></div>
-                        <div>
-                            <h3>Backend</h3>
-                            <p>Spring Boot · Spring Framework · Hibernate · JPA</p>
-                        </div>
+                    <article>
+                        <i class="fa-solid fa-server"></i>
+                        <h3>Backend Development</h3>
+                        <p>Spring Boot, Spring Framework, Hibernate, JPA, layered architecture and database integration.</p>
+                        <a href="#portfolio">View project <i class="fa-solid fa-arrow-right"></i></a>
                     </article>
 
-                    <article class="card skill-card">
-                        <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
-                        <div>
-                            <h3>SQL & Database</h3>
-                            <p>MySQL · Joins · Subqueries · GROUP BY · HAVING · Aggregates · Views · Stored Procedures · Constraints</p>
-                        </div>
+                    <article>
+                        <i class="fa-solid fa-database"></i>
+                        <h3>SQL &amp; DBMS</h3>
+                        <p>MySQL, joins, subqueries, GROUP BY, HAVING, aggregates, views, stored procedures and constraints.</p>
+                        <a href="#skills-details">See skills <i class="fa-solid fa-arrow-right"></i></a>
                     </article>
 
-                    <article class="card skill-card">
-                        <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
-                        <div>
-                            <h3>Frontend</h3>
-                            <p>HTML5 · CSS3 · JavaScript</p>
-                        </div>
-                    </article>
-
-                    <article class="card skill-card">
-                        <div class="skill-icon"><i class="fa-solid fa-sitemap"></i></div>
-                        <div>
-                            <h3>Engineering Concepts</h3>
-                            <p>Data Structures · DBMS · MVC Architecture · SDLC · CRUD Operations · Database Normalization</p>
-                        </div>
-                    </article>
-
-                    <article class="card skill-card">
-                        <div class="skill-icon"><i class="fa-solid fa-toolbox"></i></div>
-                        <div>
-                            <h3>Developer Tools</h3>
-                            <p>GitHub · Eclipse · IntelliJ IDEA · VS Code · MySQL Workbench</p>
-                        </div>
+                    <article>
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <h3>Full Stack Web</h3>
+                        <p>HTML5, CSS3 and JavaScript combined with Java backend and relational database workflows.</p>
+                        <a href="#portfolio">Explore work <i class="fa-solid fa-arrow-right"></i></a>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section id="experience" class="section">
-            <div class="container hidden">
-                <div class="section-heading">
-                    <span class="section-number">03</span>
-                    <div>
-                        <p class="section-kicker">JOURNEY</p>
-                        <h2>Experience</h2>
-                    </div>
+        <section id="skills-details">
+            <div class="container reveal">
+                <p class="section-kicker">TOOLBOX</p>
+                <h2 class="sub-title">Everything in the stack</h2>
+
+                <div class="skill-cloud">
+                    <span>Java</span><span>SQL</span><span>JavaScript</span>
+                    <span>Core Java</span><span>OOP</span><span>Collections</span>
+                    <span>Exception Handling</span><span>Multithreading</span><span>Java I/O</span><span>JDBC</span>
+                    <span>Spring Boot</span><span>Spring Framework</span><span>Hibernate</span><span>JPA</span>
+                    <span>HTML5</span><span>CSS3</span><span>MySQL</span><span>DBMS</span>
+                    <span>Data Structures</span><span>MVC Architecture</span><span>SDLC</span>
+                    <span>CRUD Operations</span><span>Database Normalization</span>
+                    <span>GitHub</span><span>Eclipse</span><span>IntelliJ IDEA</span><span>VS Code</span><span>MySQL Workbench</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <div class="container reveal">
+                <p class="section-kicker">MY WORK</p>
+                <h2 class="sub-title">Featured Project</h2>
+
+                <div class="work-list">
+                    <article class="work">
+                        <div class="work-visual project-employee">
+                            <div class="project-code">
+                                <span>Spring Boot</span>
+                                <span>Hibernate</span>
+                                <span>JPA</span>
+                                <span>MySQL</span>
+                            </div>
+                        </div>
+                        <div class="layer">
+                            <p class="project-label">FULL STACK APPLICATION</p>
+                            <h3>Employee Management System</h3>
+                            <p>
+                                Full-stack employee and department management application using Java,
+                                Spring Boot, Hibernate, JPA and MySQL with CRUD operations,
+                                layered architecture, validation and database relationships.
+                            </p>
+                            <a href="https://github.com/lokesh-142" target="_blank" rel="noopener" aria-label="Open GitHub project">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="work work-secondary">
+                        <div class="work-visual architecture-visual">
+                            <i class="fa-solid fa-sitemap"></i>
+                            <span>Controller → Service → Repository</span>
+                        </div>
+                        <div class="layer">
+                            <p class="project-label">ARCHITECTURE</p>
+                            <h3>Layered Application Design</h3>
+                            <p>Controller, Service and Repository layers with Spring Dependency Injection and transactional database operations.</p>
+                            <a href="#about" aria-label="See architecture details"><i class="fa-solid fa-arrow-down"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="work work-secondary">
+                        <div class="work-visual database-visual">
+                            <i class="fa-solid fa-database"></i>
+                            <span>Relations · Queries · Integrity</span>
+                        </div>
+                        <div class="layer">
+                            <p class="project-label">DATABASE</p>
+                            <h3>Relational Data Handling</h3>
+                            <p>MySQL-backed workflows using joins, subqueries, constraints, aggregates and normalized data models.</p>
+                            <a href="#skills-details" aria-label="See database skills"><i class="fa-solid fa-arrow-down"></i></a>
+                        </div>
+                    </article>
                 </div>
 
-                <article class="card experience-card">
-                    <div class="experience-top">
-                        <div>
-                            <span class="timeline-date">JUL 2022 — JAN 2023</span>
-                            <h3>Industrial Intern</h3>
-                            <h4>Microlink Information Technologies</h4>
-                        </div>
-                        <span class="experience-badge">IT Services &amp; Consulting</span>
-                    </div>
+                <div class="project-note">
+                    <i class="fa-solid fa-circle-info"></i>
+                    The portfolio highlights the project and technical areas documented in my current resume.
+                </div>
+            </div>
+        </section>
 
-                    <div class="experience-body">
-                        <div class="experience-line"><span></span></div>
+        <section id="experience">
+            <div class="container reveal">
+                <p class="section-kicker">EXPERIENCE</p>
+                <h2 class="sub-title">Where I’ve worked</h2>
+
+                <div class="experience-box">
+                    <div class="experience-date">JUL 2022<br><span>JAN 2023</span></div>
+                    <div>
+                        <span class="experience-type">Industrial Intern</span>
+                        <h3>Microlink Information Technologies</h3>
+                        <p class="experience-company">IT Services &amp; Consulting</p>
                         <ul>
                             <li>Assisted in testing and debugging embedded system applications and troubleshooting technical issues.</li>
                             <li>Participated in system integration and technical documentation activities.</li>
@@ -266,139 +255,42 @@
                             <li>Gained practical exposure to software development workflows, testing, debugging and problem-solving.</li>
                         </ul>
                     </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="projects" class="section section-alt">
-            <div class="container hidden">
-                <div class="section-heading">
-                    <span class="section-number">04</span>
-                    <div>
-                        <p class="section-kicker">BUILD</p>
-                        <h2>Featured Project</h2>
-                    </div>
-                </div>
-
-                <article class="project-showcase card">
-                    <div class="project-main">
-                        <div class="project-topline">
-                            <span class="project-label">FULL STACK APPLICATION</span>
-                            <a href="https://github.com/lokesh-142" target="_blank" rel="noopener" class="icon-link" aria-label="Open GitHub">
-                                <i class="fa-brands fa-github"></i>
-                            </a>
-                        </div>
-
-                        <h3>Employee Management System</h3>
-                        <p class="project-summary">
-                            A full-stack employee and department management application built with a layered
-                            architecture and relational database integration.
-                        </p>
-
-                        <div class="tech-chips">
-                            <span>Java</span>
-                            <span>Spring Boot</span>
-                            <span>Hibernate</span>
-                            <span>JPA</span>
-                            <span>MySQL</span>
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
-
-                        <div class="project-details">
-                            <div>
-                                <h4>What I built</h4>
-                                <ul>
-                                    <li>Employee and department CRUD operations using Spring Data JPA and REST APIs.</li>
-                                    <li>Entity-to-table mapping with Hibernate ORM and JPA annotations.</li>
-                                    <li><strong>@OneToMany</strong>, <strong>@ManyToOne</strong> and <strong>@JoinColumn</strong> relationships.</li>
-                                    <li>Controller, Service and Repository layers using Spring Dependency Injection.</li>
-                                    <li><strong>@Transactional</strong> operations for database consistency.</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4>Engineering practices</h4>
-                                <ul>
-                                    <li>Exception handling and input validation for reliable execution.</li>
-                                    <li>SQL concepts including JOINs, subqueries, GROUP BY, HAVING and aggregate functions.</li>
-                                    <li>Frontend components integrated with REST APIs.</li>
-                                    <li>OOP principles, MVC architecture and debugging practices.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <aside class="project-side">
-                        <div class="architecture">
-                            <p class="architecture-label">APPLICATION FLOW</p>
-                            <div class="flow-node">HTML / CSS / JS</div>
-                            <i class="fa-solid fa-arrow-down"></i>
-                            <div class="flow-node">Controller</div>
-                            <i class="fa-solid fa-arrow-down"></i>
-                            <div class="flow-node">Service</div>
-                            <i class="fa-solid fa-arrow-down"></i>
-                            <div class="flow-node">Repository</div>
-                            <i class="fa-solid fa-arrow-down"></i>
-                            <div class="flow-node">MySQL</div>
-                        </div>
-                    </aside>
-                </article>
-            </div>
-        </section>
-
-        <section id="education" class="section">
-            <div class="container hidden">
-                <div class="section-heading">
-                    <span class="section-number">05</span>
-                    <div>
-                        <p class="section-kicker">ACADEMICS</p>
-                        <h2>Education</h2>
-                    </div>
-                </div>
-
-                <div class="education-grid">
-                    <article class="card education-card">
-                        <div class="education-head">
-                            <span class="education-year">2023 — 2026</span>
-                            <span class="education-grade">CGPA 7.5</span>
-                        </div>
-                        <h3>B.Tech — Information Technology</h3>
-                        <p>R.V.R. &amp; J.C. College of Engineering</p>
-                    </article>
-
-                    <article class="card education-card">
-                        <div class="education-head">
-                            <span class="education-year">2020 — 2023</span>
-                            <span class="education-grade">87%</span>
-                        </div>
-                        <h3>Diploma — Computer Engineering</h3>
-                        <p>A.A.N.M &amp; V.V.R.S.R Polytechnic</p>
-                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="section contact-section section-alt">
-            <div class="container hidden">
-                <div class="contact-panel card">
-                    <div>
-                        <span class="section-number">06</span>
+        <section id="contact">
+            <div class="container">
+                <div class="row contact-row reveal">
+                    <div class="contact-left">
                         <p class="section-kicker">CONTACT</p>
-                        <h2>Let’s build something useful.</h2>
-                        <p>
-                            I’m interested in opportunities where I can work with Java, backend systems,
-                            databases and full-stack application development.
+                        <h2 class="sub-title">Let’s connect.</h2>
+                        <p class="contact-intro">
+                            I’m interested in entry-level Java, backend and full-stack software development opportunities.
                         </p>
+                        <p><i class="fa-solid fa-envelope"></i> <a href="mailto:kolusulokesh934@gmail.com">kolusulokesh934@gmail.com</a></p>
+                        <p><i class="fa-solid fa-phone"></i> <a href="tel:+918919232414">+91 8919232414</a></p>
+                        <p><i class="fa-solid fa-location-dot"></i> Vijayawada, Andhra Pradesh</p>
+
+                        <div class="social-icons">
+                            <a href="https://github.com/lokesh-142" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://linkedin.com/in/kolusulokesh" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="mailto:kolusulokesh934@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                        </div>
+
+                        <a class="btn btn-primary contact-resume" href="assets/software_developer_fresher_lokesh.pdf" download="Kolusu_Lokesh_Resume.pdf">
+                            <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+                        </a>
                     </div>
 
-                    <div class="contact-actions">
-                        <a class="btn primary-btn" href="mailto:kolusulokesh934@gmail.com">
-                            <i class="fa-solid fa-envelope"></i> Email Me
-                        </a>
-                        <a class="btn secondary-btn" href="https://linkedin.com/in/kolusulokesh" target="_blank" rel="noopener">
-                            <i class="fa-brands fa-linkedin"></i> LinkedIn
-                        </a>
+                    <div class="contact-right">
+                        <form id="contact-form">
+                            <input type="text" id="contact-name" placeholder="Your Name" required>
+                            <input type="email" id="contact-email" placeholder="Your Email" required>
+                            <textarea id="contact-message" rows="7" placeholder="Your Message" required></textarea>
+                            <button class="btn btn-primary submit-btn" type="submit">Send Message <i class="fa-solid fa-paper-plane"></i></button>
+                            <p id="form-status" role="status"></p>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -406,17 +298,9 @@
     </main>
 
     <footer>
-        <div class="container footer-inner">
-            <div>
-                <div class="footer-brand"><span>LK</span> · Kolusu Lokesh</div>
-                <p>Java Full Stack Developer · Vijayawada, Andhra Pradesh</p>
-            </div>
-            <div class="footer-links">
-                <a href="https://github.com/lokesh-142" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://linkedin.com/in/kolusulokesh" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="mailto:kolusulokesh934@gmail.com">Email</a>
-            </div>
-            <p class="copyright">© 2026 Kolusu Lokesh</p>
+        <div class="container footer-content">
+            <p>© 2026 Kolusu Lokesh. Built with HTML, CSS &amp; JavaScript.</p>
+            <a href="#home">Back to top <i class="fa-solid fa-arrow-up"></i></a>
         </div>
     </footer>
 
