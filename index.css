@@ -25,7 +25,7 @@ header{min-height:100vh;background:radial-gradient(circle at 75% 45%,rgba(255,0,
 nav{height:90px;display:flex;align-items:center;justify-content:space-between}
 .logo{width:54px;height:54px;border:1px solid rgba(255,0,79,.45);background:rgba(255,0,79,.06);display:grid;place-items:center;border-radius:14px;font-weight:800;letter-spacing:.04em;color:#fff}
 .logo span{color:var(--accent)}
-nav ul{display:flex;align-items:center;gap:32px;list-style:none}
+nav ul{display:flex;align-items:center;gap:32px;list-style:none;margin:0 auto}
 nav ul li a{font-size:.84rem;font-weight:600;letter-spacing:.02em;color:#ddd;transition:var(--transition)}
 nav ul li a:hover{color:var(--accent)}
 .open-menu,.close-menu{display:none;background:none;border:0;color:#fff;font-size:1.5rem}
@@ -162,7 +162,7 @@ header:before{
     background:
       linear-gradient(90deg,rgba(5,5,5,.96) 0%,rgba(5,5,5,.82) 43%,rgba(5,5,5,.25) 72%,rgba(5,5,5,.42) 100%),
       linear-gradient(180deg,rgba(5,5,5,.28) 0%,rgba(5,5,5,.08) 44%,rgba(5,5,5,.70) 100%),
-      url("assets/portfolio-hero-background.jpg") center center/cover no-repeat;
+      url("assets/portfolio-bg-min.jpg") center right/cover no-repeat;
     opacity:1;z-index:0;filter:saturate(.92) contrast(1.02);
 }
 header:after{
@@ -194,3 +194,6 @@ header nav{position:relative;z-index:2}
     .hero-background-caption{position:relative;right:auto;bottom:auto;margin-top:28px;text-align:left;max-width:100%;display:flex;flex-direction:row;flex-wrap:wrap;gap:6px}
     .hero-background-caption span{padding:7px 9px;border:1px solid rgba(255,0,79,.25);background:rgba(0,0,0,.32);border-radius:6px}
 }
+
+header:before{background-position:center right}
+@media(max-width:800px){nav ul{margin:0}}
