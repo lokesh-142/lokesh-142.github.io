@@ -1,40 +1,63 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const navbar = document.getElementById("navbar");
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav-links");
+    const sidemenu = document.getElementById("sidemenu");
+    const openMenu = document.querySelector(".open-menu");
+    const closeMenu = document.querySelector(".close-menu");
 
-    const setScrolled = () => navbar.classList.toggle("scrolled", window.scrollY > 18);
-    setScrolled();
-    window.addEventListener("scroll", setScrolled, { passive: true });
-
-    hamburger?.addEventListener("click", () => {
-        const active = navLinks.classList.toggle("nav-active");
-        hamburger.setAttribute("aria-expanded", String(active));
-        hamburger.setAttribute("aria-label", active ? "Close navigation" : "Open navigation");
-        const icon = hamburger.querySelector("i");
-        icon.classList.toggle("fa-bars", !active);
-        icon.classList.toggle("fa-xmark", active);
+    openMenu?.addEventListener("click", () => {
+        sidemenu.classList.add("nav-active");
+        openMenu.setAttribute("aria-expanded", "true");
     });
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
+    closeMenu?.addEventListener("click", () => {
+        sidemenu.classList.remove("nav-active");
+        openMenu.setAttribute("aria-expanded", "false");
+    });
+
+    sidemenu?.querySelectorAll("a").forEach(link => {
         link.addEventListener("click", () => {
-            navLinks.classList.remove("nav-active");
-            hamburger?.setAttribute("aria-expanded", "false");
-            hamburger?.setAttribute("aria-label", "Open navigation");
-            const icon = hamburger?.querySelector("i");
-            icon?.classList.add("fa-bars");
-            icon?.classList.remove("fa-xmark");
+            sidemenu.classList.remove("nav-active");
+            openMenu.setAttribute("aria-expanded", "false");
         });
     });
 
-    const observer = new IntersectionObserver((entries, obs) => {
+    document.querySelectorAll(".tab-links").forEach(button => {
+        button.addEventListener("click", () => {
+            document.querySelectorAll(".tab-links").forEach(item => item.classList.remove("active-link"));
+            document.querySelectorAll(".tab-contents").forEach(item => item.classList.remove("active-tab"));
+            button.classList.add("active-link");
+            document.getElementById(button.dataset.tab)?.classList.add("active-tab");
+        });
+    });
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("show");
-                obs.unobserve(entry.target);
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1, rootMargin: "0px 0px -35px 0px" });
+    }, {threshold: 0.12, rootMargin: "0px 0px -30px 0px"});
 
-    document.querySelectorAll(".hidden").forEach(element => observer.observe(element));
+    document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
+
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+
+    form?.addEventListener("submit", event => {
+        event.preventDefault();
+
+        const name = document.getElementById("contact-name").value.trim();
+        const email = document.getElementById("contact-email").value.trim();
+        const message = document.getElementById("contact-message").value.trim();
+
+        const subject = encodeURIComponent("Portfolio enquiry from " + name);
+        const body = encodeURIComponent(
+            "Name: " + name + "\n" +
+            "Email: " + email + "\n\n" +
+            message
+        );
+
+        window.location.href = "mailto:kolusulokesh934@gmail.com?subject=" + subject + "&body=" + body;
+        status.textContent = "Opening your email client...";
+    });
 });
