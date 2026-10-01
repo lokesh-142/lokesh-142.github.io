@@ -156,27 +156,27 @@ header .container{position:relative}
 }
 
 
-/* Sharp, visible hero background */
+
+/* Hero background: use the supplied coding-desk artwork sharply, with a readable overlay */
 header{
   position:relative;
   min-height:100vh;
   overflow:hidden;
-  background:
-    radial-gradient(circle at 78% 45%, rgba(255,0,79,.20), transparent 28%),
-    radial-gradient(circle at 62% 58%, rgba(62,118,255,.12), transparent 24%),
-    #070707;
+  background:#060606;
 }
 header:before{
   content:"";
   position:absolute;
   inset:0;
   z-index:0;
-  pointer-events:none;
-  background:
-    linear-gradient(90deg, rgba(5,5,5,.92) 0%, rgba(5,5,5,.78) 35%, rgba(5,5,5,.26) 61%, rgba(5,5,5,.10) 100%),
-    linear-gradient(180deg, rgba(0,0,0,.30) 0%, rgba(0,0,0,.02) 42%, rgba(0,0,0,.48) 100%),
-    url("assets/profile.jpg") 82% 22% / 620px auto no-repeat;
-  opacity:1;
+  background-image:
+    linear-gradient(90deg,rgba(4,4,4,.90) 0%,rgba(4,4,4,.72) 32%,rgba(4,4,4,.22) 63%,rgba(4,4,4,.08) 100%),
+    linear-gradient(180deg,rgba(0,0,0,.30) 0%,rgba(0,0,0,0) 45%,rgba(0,0,0,.42) 100%),
+    url("assets/portfolio-hero-background.jpg?v=20261001-4");
+  background-position:center,center,center right;
+  background-size:cover,cover,cover;
+  background-repeat:no-repeat;
+  filter:none;
 }
 header:after{
   content:"";
@@ -184,17 +184,15 @@ header:after{
   inset:0;
   z-index:0;
   pointer-events:none;
-  background-image:
+  background:
+    radial-gradient(circle at 74% 46%,rgba(255,0,79,.12),transparent 24%),
     linear-gradient(rgba(255,255,255,.026) 1px,transparent 1px),
     linear-gradient(90deg,rgba(255,255,255,.026) 1px,transparent 1px);
-  background-size:48px 48px;
-  mask-image:linear-gradient(to bottom, black, transparent 92%);
+  background-size:auto,48px 48px,48px 48px;
+  mix-blend-mode:screen;
 }
-header .container{position:relative;z-index:1}
+header .container,header nav{position:relative;z-index:1}
 .header-text{padding-right:0;max-width:720px}
-.hero-stats{position:relative;z-index:2}
-nav{position:relative;z-index:2}
-nav ul{margin:0 auto}
 .profile-card{display:none}
 .hero-background-caption{
   position:absolute;
@@ -205,25 +203,29 @@ nav ul{margin:0 auto}
   flex-direction:column;
   gap:7px;
   font:700 .66rem/1.15 monospace;
-  color:rgba(255,255,255,.72);
+  color:rgba(255,255,255,.74);
   letter-spacing:.18em;
   text-align:right;
+  text-shadow:0 2px 18px rgba(0,0,0,.7);
 }
 .hero-background-caption span:before{content:"• ";color:var(--accent)}
 @media(max-width:1050px){
   header:before{
-    background:
-      linear-gradient(90deg,rgba(5,5,5,.94) 0%,rgba(5,5,5,.68) 42%,rgba(5,5,5,.18) 100%),
-      url("assets/profile.jpg") 82% center / 500px auto no-repeat;
+    background-image:
+      linear-gradient(90deg,rgba(4,4,4,.92) 0%,rgba(4,4,4,.68) 40%,rgba(4,4,4,.18) 100%),
+      linear-gradient(180deg,rgba(0,0,0,.34),rgba(0,0,0,.45)),
+      url("assets/portfolio-hero-background.jpg?v=20261001-4");
+    background-position:center,center,center;
+    background-size:cover,cover,cover;
   }
-  .hero-background-caption{right:28px}
 }
 @media(max-width:800px){
-  nav ul{margin:0}
   header:before{
-    background:
-      linear-gradient(180deg,rgba(5,5,5,.94) 0%,rgba(5,5,5,.58) 54%,rgba(5,5,5,.78) 100%),
-      url("assets/profile.jpg") 50% 28% / 410px auto no-repeat;
+    background-image:
+      linear-gradient(180deg,rgba(4,4,4,.92) 0%,rgba(4,4,4,.50) 44%,rgba(4,4,4,.82) 100%),
+      url("assets/portfolio-hero-background.jpg?v=20261001-4");
+    background-position:center,center;
+    background-size:cover,cover;
   }
   .hero-background-caption{
     position:relative;
@@ -244,10 +246,7 @@ nav ul{margin:0 auto}
 }
 @media(max-width:520px){
   header:before{
-    background:
-      linear-gradient(180deg,rgba(5,5,5,.96) 0%,rgba(5,5,5,.62) 46%,rgba(5,5,5,.84) 100%),
-      url("assets/profile.jpg") 50% 19% / 330px auto no-repeat;
+    background-position:center top,center top;
+    background-size:cover,cover;
   }
-  .hero-background-caption{gap:6px}
-  .hero-background-caption span{font-size:.58rem}
 }
