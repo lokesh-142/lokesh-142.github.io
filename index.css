@@ -158,75 +158,106 @@ header .container{position:relative}
 
 
 
-/* 3:4 portrait hero composition */
-header{
+
+/* Fixed background layer + scrolling content layer */
+html{scroll-behavior:smooth}
+body{
   position:relative;
-  min-height:100vh;
-  overflow:hidden;
   background:#060606;
 }
-header:before{
+body:before{
   content:"";
-  position:absolute;
+  position:fixed;
   z-index:0;
   top:50%;
   right:clamp(24px,6vw,100px);
   transform:translateY(-50%);
   width:min(42vw,540px);
   aspect-ratio:3 / 4;
-  height:auto;
   border-radius:24px;
-  background-image:
-    linear-gradient(180deg,rgba(0,0,0,.04) 0%,rgba(0,0,0,.06) 48%,rgba(0,0,0,.42) 100%),
-    url("assets/portfolio-hero-background.jpg?v=20261001-5");
-  background-position:center,center;
-  background-size:cover,cover;
-  background-repeat:no-repeat;
-  box-shadow:0 28px 80px rgba(0,0,0,.55),0 0 55px rgba(255,0,79,.10);
-}
-header:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  z-index:0;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.02) 0%,rgba(0,0,0,.04) 52%,rgba(0,0,0,.25) 100%),
+    url("assets/portfolio-hero-background.jpg?v=20261001-6") center/cover no-repeat;
+  box-shadow:0 28px 80px rgba(0,0,0,.58),0 0 55px rgba(255,0,79,.10);
   pointer-events:none;
-  background:linear-gradient(90deg,#060606 0%,rgba(6,6,6,.94) 28%,rgba(6,6,6,.38) 57%,rgba(6,6,6,0) 100%);
 }
-header .container,header nav{position:relative;z-index:1}
+body:after{
+  content:"";
+  position:fixed;
+  z-index:0;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(90deg,#060606 0%,rgba(6,6,6,.94) 28%,rgba(6,6,6,.48) 57%,rgba(6,6,6,.08) 100%);
+}
+body>*{position:relative;z-index:1}
+header{
+  position:relative;
+  min-height:100vh;
+  overflow:visible;
+  background:transparent;
+}
+header:before,header:after{display:none}
+header .container,header nav{position:relative;z-index:2}
 .header-text{padding-right:0;max-width:680px}
 .profile-card{display:none}
+
+/* Sections become the scrolling foreground layer.
+   The image behind them stays visible instead of being covered by solid blocks. */
+section,
+#about,
+#services,
+#portfolio,
+#experience,
+#education,
+#contact{
+  position:relative;
+  z-index:2;
+  background:rgba(6,6,6,.72);
+  backdrop-filter:blur(1.5px);
+  -webkit-backdrop-filter:blur(1.5px);
+}
+#about{background:rgba(6,6,6,.66)}
+#services{background:rgba(6,6,6,.74)}
+#portfolio{background:rgba(6,6,6,.68)}
+#experience{background:rgba(6,6,6,.74)}
+#education{background:rgba(6,6,6,.68)}
+#contact{background:rgba(6,6,6,.76)}
+
 .hero-background-caption{
   position:absolute;
   right:48px;
   bottom:28px;
-  z-index:2;
+  z-index:3;
   display:flex;
   flex-direction:column;
   gap:7px;
   font:700 .66rem/1.15 monospace;
-  color:rgba(255,255,255,.74);
+  color:rgba(255,255,255,.78);
   letter-spacing:.18em;
   text-align:right;
+  text-shadow:0 2px 18px rgba(0,0,0,.7);
 }
 .hero-background-caption span:before{content:"• ";color:var(--accent)}
+
 @media(max-width:1050px){
-  header:before{
-    right:28px;
-    width:min(44vw,470px);
-  }
+  body:before{right:28px;width:min(44vw,470px)}
 }
 @media(max-width:800px){
-  header:before{
+  body:before{
     top:115px;
     right:50%;
     transform:translateX(50%);
     width:min(78vw,390px);
     aspect-ratio:3 / 4;
     border-radius:20px;
-    opacity:.48;
+    opacity:.52;
   }
-  header:after{
-    background:linear-gradient(180deg,#060606 0%,rgba(6,6,6,.80) 35%,rgba(6,6,6,.42) 62%,#060606 100%);
+  body:after{
+    background:linear-gradient(180deg,#060606 0%,rgba(6,6,6,.82) 30%,rgba(6,6,6,.48) 60%,#060606 100%);
+  }
+  section,
+  #about,#services,#portfolio,#experience,#education,#contact{
+    background:rgba(6,6,6,.68);
   }
   .hero-background-caption{
     position:relative;
@@ -246,8 +277,5 @@ header .container,header nav{position:relative;z-index:1}
   }
 }
 @media(max-width:520px){
-  header:before{
-    top:105px;
-    width:82vw;
-  }
+  body:before{top:105px;width:82vw}
 }
