@@ -305,3 +305,44 @@ section,
       url("assets/portfolio-hero-background.png?v=20261003-1") center top/cover no-repeat;
   }
 }
+
+
+/* Portfolio refinement: clearer hierarchy, project cards and reduced repetition */
+.about-modern{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:55px;align-items:center}
+.about-copy .sub-title{max-width:780px}
+.about-side{display:flex;justify-content:flex-end}
+.about-code-card{width:min(100%,390px);padding:26px;border:1px solid rgba(255,255,255,.10);border-radius:14px;background:rgba(10,10,10,.78);box-shadow:0 24px 70px rgba(0,0,0,.35);font-family:monospace}
+.about-code-card span{display:block;color:#666;font-size:.72rem;margin-bottom:15px}
+.about-code-card strong{display:block;color:#fff;font-size:1.2rem;margin-bottom:18px}
+.about-code-card code{display:block;color:#aaa;font-size:.74rem;line-height:2}
+.about-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:32px}
+.about-highlights div{padding:17px;border:1px solid var(--line);background:rgba(15,15,15,.72);border-radius:10px}
+.about-highlights span{display:block;color:var(--accent);font:700 .65rem monospace;margin-bottom:14px}
+.about-highlights strong{display:block;font-size:.9rem;margin-bottom:5px}
+.about-highlights small{display:block;color:#777;font-size:.68rem;line-height:1.55}
+.section-lead{max-width:690px;color:#8b8b8b;font-size:.88rem;margin-top:-10px}
+.projects-grid{grid-template-columns:repeat(3,1fr);gap:18px}
+.project-card{min-height:430px}
+.project-card .layer{padding:27px;transform:translateY(72%)}
+.project-card:hover .layer{transform:translateY(0)}
+.project-student{background:linear-gradient(135deg,#0c1017,#151b2a 55%,#260916)}
+.project-retail{background:linear-gradient(135deg,#111,#141a16 55%,#291109)}
+.project-client{background:linear-gradient(135deg,#111,#171117 55%,#260c1b)}
+.project-window,.dashboard-mock,.client-mock{width:76%;border:1px solid rgba(255,255,255,.12);border-radius:10px;background:rgba(4,4,4,.68);box-shadow:0 22px 50px rgba(0,0,0,.42)}
+.window-bar{height:24px;display:flex;gap:5px;align-items:center;padding:0 10px;border-bottom:1px solid rgba(255,255,255,.08)}
+.window-bar span{width:6px;height:6px;border-radius:50%;background:#555}
+.student-ui{padding:27px 20px;display:flex;flex-direction:column;gap:16px}.student-ui strong{font-size:.72rem;letter-spacing:.1em}.student-ui div{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.student-ui i{height:52px;border:1px solid rgba(255,0,79,.22);background:rgba(255,0,79,.07);border-radius:6px}.student-ui small{color:#777;font-size:.62rem}
+.dashboard-mock{padding:18px}.dash-head{display:flex;justify-content:space-between;font-size:.68rem}.dash-head span{color:var(--accent);font-family:monospace}.dash-bars{height:150px;display:flex;align-items:flex-end;gap:9px;margin:20px 0}.dash-bars i{display:block;flex:1;background:linear-gradient(to top,rgba(255,0,79,.85),rgba(255,0,79,.18));border-radius:4px 4px 0 0}.dash-bars i:nth-child(1){height:42%}.dash-bars i:nth-child(2){height:68%}.dash-bars i:nth-child(3){height:54%}.dash-bars i:nth-child(4){height:84%}.dash-bars i:nth-child(5){height:72%}.dash-metrics{display:flex;gap:7px}.dash-metrics b{flex:1;padding:9px 5px;text-align:center;border:1px solid rgba(255,255,255,.08);font-size:.58rem;color:#888}
+.client-mock{padding:28px 22px;display:flex;flex-direction:column;gap:14px}.client-mock span{color:var(--accent);font:700 .62rem monospace;letter-spacing:.12em}.client-mock strong{font-size:1.25rem}.client-mock em{font-style:normal;color:#777;font:600 .62rem monospace;line-height:1.6}
+.project-card .layer a{flex:none}
+.project-note{margin-top:18px}
+#form-status{min-height:20px}
+@media(max-width:1050px){
+  .about-modern{grid-template-columns:1fr}.about-side{justify-content:flex-start}.projects-grid{grid-template-columns:1fr 1fr}.project-card:first-child{grid-column:1/-1}
+}
+@media(max-width:800px){
+  .about-highlights{grid-template-columns:1fr}.projects-grid{grid-template-columns:1fr}.project-card:first-child{grid-column:auto}
+}
+@media(max-width:520px){
+  .about-code-card{width:100%}.project-card .layer{transform:translateY(0)}.project-card{min-height:390px}
+}
