@@ -161,35 +161,44 @@ header .container{position:relative}
 
 /* Fixed background layer + scrolling content layer */
 html{scroll-behavior:smooth}
+
 body{
   position:relative;
   background:#060606;
 }
+
+/* Full-screen fixed background image.
+   The page content scrolls above it while the image stays in place. */
 body:before{
   content:"";
   position:fixed;
   z-index:0;
-  top:50%;
-  right:clamp(24px,6vw,100px);
-  transform:translateY(-50%);
-  width:min(42vw,540px);
-  aspect-ratio:3 / 4;
-  border-radius:24px;
-  background:
-    linear-gradient(180deg,rgba(0,0,0,.02) 0%,rgba(0,0,0,.04) 52%,rgba(0,0,0,.25) 100%),
-    url("assets/portfolio-hero-background.png?v=20261002-2") center/cover no-repeat;
-  box-shadow:0 28px 80px rgba(0,0,0,.58),0 0 55px rgba(255,0,79,.10);
+  inset:0;
+  width:100%;
+  height:100%;
   pointer-events:none;
+  background:
+    linear-gradient(90deg,rgba(6,6,6,.96) 0%,rgba(6,6,6,.82) 28%,rgba(6,6,6,.42) 56%,rgba(6,6,6,.16) 100%),
+    linear-gradient(180deg,rgba(6,6,6,.28) 0%,rgba(6,6,6,.08) 45%,rgba(6,6,6,.58) 100%),
+    url("assets/portfolio-hero-background.png?v=20261003-1") center center/cover no-repeat;
+  filter:saturate(.92) brightness(.82);
+  transform:translateZ(0);
+  will-change:transform;
 }
+
 body:after{
   content:"";
   position:fixed;
   z-index:0;
   inset:0;
   pointer-events:none;
-  background:linear-gradient(90deg,#060606 0%,rgba(6,6,6,.94) 28%,rgba(6,6,6,.48) 57%,rgba(6,6,6,.08) 100%);
+  background:
+    radial-gradient(circle at 72% 34%,rgba(255,0,79,.07),transparent 34%),
+    linear-gradient(180deg,rgba(0,0,0,.10),rgba(0,0,0,.20));
 }
+
 body>*{position:relative;z-index:1}
+
 header{
   position:relative;
   min-height:100vh;
@@ -201,27 +210,29 @@ header .container,header nav{position:relative;z-index:2}
 .header-text{padding-right:0;max-width:680px}
 .profile-card{display:none}
 
-/* Sections become the scrolling foreground layer.
-   The image behind them stays visible instead of being covered by solid blocks. */
+/* Glass-like scrolling foreground sections keep the fixed photo visible. */
 section,
 #about,
 #services,
 #portfolio,
+#skills-details,
 #experience,
 #education,
 #contact{
   position:relative;
   z-index:2;
-  background:rgba(6,6,6,.72);
-  backdrop-filter:blur(1.5px);
-  -webkit-backdrop-filter:blur(1.5px);
+  background:rgba(6,6,6,.56);
+  backdrop-filter:blur(2px);
+  -webkit-backdrop-filter:blur(2px);
 }
-#about{background:rgba(6,6,6,.66)}
-#services{background:rgba(6,6,6,.74)}
-#portfolio{background:rgba(6,6,6,.68)}
-#experience{background:rgba(6,6,6,.74)}
-#education{background:rgba(6,6,6,.68)}
-#contact{background:rgba(6,6,6,.76)}
+
+#about{background:rgba(6,6,6,.48)}
+#services{background:rgba(6,6,6,.58)}
+#skills-details{background:rgba(6,6,6,.50)}
+#portfolio{background:rgba(6,6,6,.52)}
+#experience{background:rgba(6,6,6,.58)}
+#education{background:rgba(6,6,6,.50)}
+#contact{background:rgba(6,6,6,.62)}
 
 .hero-background-caption{
   position:absolute;
@@ -240,25 +251,34 @@ section,
 .hero-background-caption span:before{content:"• ";color:var(--accent)}
 
 @media(max-width:1050px){
-  body:before{right:28px;width:min(44vw,470px)}
+  body:before{
+    background:
+      linear-gradient(90deg,rgba(6,6,6,.94) 0%,rgba(6,6,6,.74) 30%,rgba(6,6,6,.34) 62%,rgba(6,6,6,.16) 100%),
+      linear-gradient(180deg,rgba(6,6,6,.24),rgba(6,6,6,.12) 50%,rgba(6,6,6,.52)),
+      url("assets/portfolio-hero-background.png?v=20261003-1") center center/cover no-repeat;
+  }
 }
+
 @media(max-width:800px){
   body:before{
-    top:115px;
-    right:50%;
-    transform:translateX(50%);
-    width:min(78vw,390px);
-    aspect-ratio:3 / 4;
-    border-radius:20px;
-    opacity:.52;
+    inset:0;
+    background:
+      linear-gradient(180deg,rgba(6,6,6,.62) 0%,rgba(6,6,6,.42) 38%,rgba(6,6,6,.62) 100%),
+      url("assets/portfolio-hero-background.png?v=20261003-1") center top/cover no-repeat;
+    filter:saturate(.88) brightness(.68);
   }
+
   body:after{
-    background:linear-gradient(180deg,#060606 0%,rgba(6,6,6,.82) 30%,rgba(6,6,6,.48) 60%,#060606 100%);
+    background:
+      linear-gradient(180deg,rgba(6,6,6,.16),rgba(6,6,6,.34)),
+      radial-gradient(circle at 50% 30%,rgba(255,0,79,.06),transparent 42%);
   }
+
   section,
-  #about,#services,#portfolio,#experience,#education,#contact{
-    background:rgba(6,6,6,.68);
+  #about,#services,#portfolio,#skills-details,#experience,#education,#contact{
+    background:rgba(6,6,6,.60);
   }
+
   .hero-background-caption{
     position:relative;
     right:auto;
@@ -269,6 +289,7 @@ section,
     justify-content:flex-start;
     text-align:left;
   }
+
   .hero-background-caption span{
     padding:7px 9px;
     border:1px solid rgba(255,0,79,.24);
@@ -276,6 +297,11 @@ section,
     border-radius:6px;
   }
 }
+
 @media(max-width:520px){
-  body:before{top:105px;width:82vw}
+  body:before{
+    background:
+      linear-gradient(180deg,rgba(6,6,6,.68) 0%,rgba(6,6,6,.44) 42%,rgba(6,6,6,.70) 100%),
+      url("assets/portfolio-hero-background.png?v=20261003-1") center top/cover no-repeat;
+  }
 }
