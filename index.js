@@ -4,19 +4,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeMenu = document.querySelector(".close-menu");
 
     openMenu?.addEventListener("click", () => {
-        sidemenu.classList.add("nav-active");
+        sidemenu?.classList.add("nav-active");
         openMenu.setAttribute("aria-expanded", "true");
     });
 
     closeMenu?.addEventListener("click", () => {
-        sidemenu.classList.remove("nav-active");
-        openMenu.setAttribute("aria-expanded", "false");
+        sidemenu?.classList.remove("nav-active");
+        openMenu?.setAttribute("aria-expanded", "false");
     });
 
     sidemenu?.querySelectorAll("a").forEach(link => {
         link.addEventListener("click", () => {
             sidemenu.classList.remove("nav-active");
-            openMenu.setAttribute("aria-expanded", "false");
+            openMenu?.setAttribute("aria-expanded", "false");
         });
     });
 
@@ -40,15 +40,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
 
+    const sections = document.querySelectorAll("header[id], main section[id]");
+    const navLinks = document.querySelectorAll("#sidemenu a");
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            navLinks.forEach(link => link.classList.toggle(
+                "active-nav",
+                link.getAttribute("href") === "#" + entry.target.id
+            ));
+        });
+    }, {threshold: 0.35});
+    sections.forEach(section => navObserver.observe(section));
+
     const form = document.getElementById("contact-form");
     const status = document.getElementById("form-status");
 
     form?.addEventListener("submit", event => {
         event.preventDefault();
 
-        const name = document.getElementById("contact-name").value.trim();
-        const email = document.getElementById("contact-email").value.trim();
-        const message = document.getElementById("contact-message").value.trim();
+        const name = document.getElementById("contact-name")?.value.trim();
+        const email = document.getElementById("contact-email")?.value.trim();
+        const message = document.getElementById("contact-message")?.value.trim();
+
+        if (!name || !email || !message) {
+            if (status) status.textContent = "Please complete all fields.";
+            return;
+        }
 
         const subject = encodeURIComponent("Portfolio enquiry from " + name);
         const body = encodeURIComponent(
@@ -57,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
             message
         );
 
+        if (status) status.textContent = "Opening your email client...";
         window.location.href = "mailto:kolusulokesh934@gmail.com?subject=" + subject + "&body=" + body;
-        status.textContent = "Opening your email client...";
     });
 });
